@@ -10,13 +10,13 @@ const fetchBranch = async (req,res)=>{
     const validated =helpers.validate(req.params.location);
     const option={
         headers:{
-          "lbg-txn-branch-location":"London"
+          "lbg-txn-branch-location":req.params.location
         }
       }
 
    console.log('started');
    try {
-     
+
      if(validated){
       const data= await axios.get(url,option);
       console.log(data.data || "no data returned");
