@@ -4,7 +4,7 @@ const validate= (location)=>{
         if((!typeof location === String)){
             return ('location must be a string value');
         }
-        if ((typeof location == null || location == '')){
+        if ((typeof location == null || location == '' || location == undefined)){
             return ('location must not be empty or null');
            
         }
