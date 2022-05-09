@@ -1,11 +1,10 @@
-const express=require('express');
-const axios =require('axios');
-const fetchBranchService= require('./get');
 
-const port =5000;
-const app=express();
+const app=require ('./app');
 
-const Rest=express.Router();
+const port=3000;
 
-app.get('/branches/:location',fetchBranchService.fetchBranch);
-app.listen(port,console.log('server started on port 5000'));
+app.listen(port,()=>{
+    console.log('server started on port 3000');
+});
+
+

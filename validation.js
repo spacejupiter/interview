@@ -1,15 +1,20 @@
 
 
-const validate= (url)=>{
-    if((!typeof url === String)){ 
-        throw error;
-    }
-    if ((typeof url == null)){
-        throw error;
-    }
-    else{
-        return true;
-    }
+const validate= (location)=>{
+    try {
+        if((!typeof location === String)){ 
+            return ('location must be a string value');
+        }
+        if ((typeof location == null || location == '')){
+            return ('location must not be empty or null');
+            
+        }
+        else{
+            return true;
+        }
+    } catch (error) {
+        return(error);
+    }  
 }
 
 
