@@ -1,5 +1,6 @@
-const app =require('../../app');
-const request =require('supertest');
+const app = require('../../app');
+const request = require('supertest');
+
 
 
 
@@ -18,4 +19,5 @@ describe('branches',()=>{
         const res = await request(app).get('/branches').set('location','');
         expect (res.body).toEqual('location must not be empty or null');
     })
+
 })

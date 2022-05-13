@@ -1,5 +1,5 @@
 const express=require('express');
-const fetchBranchService= require('./getBranches');
+const fetchBranchService= require('./api/getBranches');
 
 const app=express();
 app.use(express.json());

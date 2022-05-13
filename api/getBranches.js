@@ -1,12 +1,12 @@
 const axios=require('axios');
 const env=require('dotenv');
-const helpers=require('./validation');
+const helpers=require('../helpers/validation');
 const url ='https://api.lloydsbank.com/open-banking/v2.2/branches'
 
 
 
 const fetchBranch = async (req,res)=>{
-
+  let branchData=[];
   const validateMessage =helpers.validate(req.headers.location); //validate the location parameters
   //const testResponse=null;
   
@@ -14,10 +14,10 @@ const fetchBranch = async (req,res)=>{
 
     try {
       if(validateMessage === true){
-        var branchData=[];
+        
         const response = await axios.get(url);
         testResponse=response;
-        const Branches = response.data.data[0].Brand[0].Branch;
+        let Branches = response.data.data[0].Brand[0].Branch;
         
         console.log(req.headers.location);
   
@@ -35,11 +35,12 @@ const fetchBranch = async (req,res)=>{
      else{
        throw new Error(validateMessage);
      }
+     //return branchData;
     } catch (error) {
        //console.log(error);
        res.status(400).json(validateMessage);
       }
-      
+      return branchData;
     }
 
 module.exports={
