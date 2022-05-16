@@ -1,5 +1,5 @@
 # interview
-#  curl http:localhost:3000/branches
+#  curl http:localhost:4000/branches
 # use node server.js to start server
 # use npm run test 
 # install  all dependencies with npm i
@@ -11,3 +11,4 @@
 # -----------USE THIS FOR API header------------
 # key =location
 # value : (ANY TOWN NAME TO FILTER DATA) e.g value:ROCHESTER
+# mocked axios to reduce network load on the api
