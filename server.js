@@ -1,10 +1,10 @@
 
 const app=require ('./app');
 
-const port=3000;
+const port=4000;
 
 app.listen(port,()=>{
-    console.log('server started on port 3000');
+    console.log('server started on port 4000');
 });
 
 
